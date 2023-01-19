@@ -1,13 +1,10 @@
 import React from 'react';
 
-export const LoadingIcon = () => {
+export const LoadingIcon: React.FC<React.ComponentPropsWithoutRef<'svg'>> = (
+  props,
+) => {
   return (
-    <svg
-      className="loading_screen--spinner"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-    >
+    <svg width="24" height="24" viewBox="0 0 24 24" {...props}>
       <g fill="none" fillRule="nonzero">
         <path
           className="ring_thumb"

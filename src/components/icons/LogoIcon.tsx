@@ -1,13 +1,10 @@
 import React from 'react';
 
-export const LogoIcon = () => {
+export const LogoIcon: React.FC<React.ComponentPropsWithoutRef<'svg'>> = (
+  props,
+) => {
   return (
-    <svg
-      className="loading_screen--logo"
-      width="64"
-      height="64"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g fill="none" fillRule="evenodd">
         <path
           className="logo_bg"
