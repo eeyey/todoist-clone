@@ -40,9 +40,10 @@ export const TodoForm: React.FC<TodoFormProps> = (props) => {
     if (type === 'add') {
       dispatch(addTodo(todo));
     } else {
-      if (!data) return;
-      dispatch(updateTodo({ id: data?.id, data: todo }));
+      if (data) dispatch(updateTodo({ id: data?.id, data: todo }));
     }
+
+    onEnd();
 
     setTitle('');
     setDescr('');
