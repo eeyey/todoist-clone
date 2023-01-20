@@ -7,7 +7,7 @@ export const fetchTodos = createAsyncThunk(
   'todos/fetch',
   async (_, ThunkAPI) => {
     try {
-      const { data: todos } = await api.get<ITodo[]>('');
+      const { data: todos } = await api.get<ITodo[]>('/todos/');
 
       return todos;
     } catch (e) {
