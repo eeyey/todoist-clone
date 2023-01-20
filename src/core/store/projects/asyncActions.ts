@@ -18,7 +18,7 @@ export const fetchProjects = createAsyncThunk(
 
 export const addProject = createAsyncThunk(
   'projects/add',
-  async (data: Exclude<Partial<IProject>, 'id'>, ThunkAPI) => {
+  async (data: Omit<Partial<IProject>, 'id'>, ThunkAPI) => {
     try {
       const { data: project } = await api.post<IProject>('/projects/', data);
 

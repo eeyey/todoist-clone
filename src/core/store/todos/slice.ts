@@ -21,7 +21,7 @@ const todosSlice = createSlice({
       state,
       action: PayloadAction<{
         id: number;
-        data: Exclude<Partial<ITodo>, 'id'>;
+        data: Omit<Partial<ITodo>, 'id'>;
       }>,
     ) => {
       const { id, data } = action.payload;

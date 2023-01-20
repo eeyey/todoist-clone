@@ -18,7 +18,7 @@ export const fetchTodos = createAsyncThunk(
 
 export const addTodo = createAsyncThunk(
   'todos/add',
-  async (data: Exclude<Partial<ITodo>, 'id'>, ThunkAPI) => {
+  async (data: Omit<Partial<ITodo>, 'id'>, ThunkAPI) => {
     try {
       const { data: todo } = await api.post<ITodo>('/todos/', data);
 

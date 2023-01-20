@@ -21,7 +21,7 @@ const projectsSlice = createSlice({
       state,
       action: PayloadAction<{
         id: number;
-        data: Exclude<Partial<IProject>, 'id'>;
+        data: Omit<Partial<IProject>, 'id'>;
       }>,
     ) => {
       const { id, data } = action.payload;
@@ -48,7 +48,7 @@ const projectsSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchProjects.fulfilled, (state, action) => {
-        state.projects = action.payload as IProject[];
+        state.projects = action.payload;
         state.status = 'success';
       })
       .addCase(fetchProjects.rejected, (state, action) => {
