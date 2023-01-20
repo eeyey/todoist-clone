@@ -9,10 +9,10 @@ interface ListProps<T> extends React.ComponentPropsWithoutRef<'ul'> {
 }
 
 export function List<T>(props: ListProps<T>) {
-  const { items, renderItem, className } = props;
+  const { items, renderItem, className, ...ulProps } = props;
 
   return (
-    <ul {...props} className={classNames('list', className)}>
+    <ul {...ulProps} className={classNames('list', className)}>
       {items.map(renderItem)}
     </ul>
   );
