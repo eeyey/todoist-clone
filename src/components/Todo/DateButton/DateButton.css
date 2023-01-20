@@ -1,0 +1,41 @@
+.date-button {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: grey;
+}
+
+.date-button_big:hover {
+  background-color: #eee;
+}
+
+.date-button_big {
+  margin-right: 10px;
+  font-size: 13px;
+  padding: 0px 8px;
+  border: 1px solid rgb(204 204 204);
+  border-radius: 5px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.date-button svg {
+  margin-right: 5px;
+}
+
+.date-button_overdue {
+  color: #d1453b;
+}
+
+.date-button_today {
+  color: #058527;
+}
+
+.date-button_tommorow {
+  color: #ad6200;
+}
+
+.date-button_next-week {
+  color: #692fc2;
+}

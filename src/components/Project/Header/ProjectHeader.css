@@ -1,0 +1,38 @@
+.project-header {
+  padding-top: 36px;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.project-header__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #202020;
+  margin: 0;
+}
+
+.project-header,
+.project-header__menu,
+.project-header__button {
+  display: flex;
+  align-items: center;
+}
+
+.project-header__button {
+  color: grey;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-right: 15px;
+}
+
+
+.project-header__button:last-child {
+  margin-right: 0;
+}
+
+.project-header__button:hover {
+  background: #f3f3f3;
+}
