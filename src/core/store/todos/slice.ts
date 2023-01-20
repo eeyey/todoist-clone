@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { addTodo, fetchTodos } from './asyncActions';
 import { ITodo } from '../../types';
+import { api } from '../../api';
 
 interface TodosState {
   todos: ITodo[];
@@ -26,16 +27,24 @@ const todosSlice = createSlice({
     ) => {
       const { id, data } = action.payload;
 
-      const project = state.todos.find((project) => project.id === id);
+      const todo = state.todos.find((project) => project.id === id);
 
-      if (project) Object.assign(project, data);
+      if (todo) {
+        Object.assign(todo, data);
+
+        api.put(`/todos/${todo.id}/`, data); // need catch error?
+      }
     },
     removeTodo: (state, action: PayloadAction<{ id: number }>) => {
       const { id } = action.payload;
 
-      const index = state.todos.findIndex((project) => project.id === id);
+      const index = state.todos.findIndex((todo) => todo.id === id);
 
-      if (index >= 0) state.todos.splice(index, 1);
+      if (index >= 0) {
+        const todo = state.todos.splice(index, 1)[0];
+
+        api.delete(`/todos/${todo.id}/`); // neeed catch error?
+      }
     },
   },
   extraReducers: (builder) => {

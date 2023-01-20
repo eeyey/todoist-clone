@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { addProject, fetchProjects } from './asyncActions';
 import { IProject } from '../../types';
+import { api } from '../../api';
 
 interface ProjectsState {
   projects: IProject[];
@@ -28,14 +29,22 @@ const projectsSlice = createSlice({
 
       const project = state.projects.find((project) => project.id === id);
 
-      if (project) Object.assign(project, data);
+      if (project) {
+        Object.assign(project, data);
+
+        api.put(`/projects/${project.id}`, data);
+      }
     },
     removeProject: (state, action: PayloadAction<{ id: number }>) => {
       const { id } = action.payload;
 
       const index = state.projects.findIndex((project) => project.id === id);
 
-      if (index >= 0) state.projects.splice(index, 1);
+      if (index >= 0) {
+        const project = state.projects.splice(index, 1)[0];
+
+        api.delete(`/projects/${project.id}`);
+      }
     },
   },
   extraReducers: (builder) => {
