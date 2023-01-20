@@ -1,3 +1,5 @@
+export * from './short-names';
+
 export const TODAY = new Date();
 
 TODAY.setHours(0);
