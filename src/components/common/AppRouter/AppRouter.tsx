@@ -7,10 +7,12 @@ import { IRoute, routes } from '../../../routes';
 export const AppRouter = () => {
   const renderRoute = (route: IRoute) => {
     if (!route.sub_routes) {
-      return <Route path={route.path} element={route.element} />;
+      return (
+        <Route key={route.path} path={route.path} element={route.element} />
+      );
     } else {
       return (
-        <Route path={route.path} element={route.element}>
+        <Route key={route.path} path={route.path} element={route.element}>
           {route.sub_routes.map(renderRoute)}
         </Route>
       );
