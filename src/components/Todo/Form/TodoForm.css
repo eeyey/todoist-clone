@@ -1,0 +1,90 @@
+.todo-add {
+  margin-top: 10px;
+}
+
+.todo-add__form {
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+}
+
+.todo-add__title,
+.todo-add__placeholder {
+  font-weight: bold;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  margin-bottom: 7px;
+  line-height: 20px;
+}
+
+.todo-add__title-wrapper {
+  position: relative;
+}
+
+.todo-add__placeholder {
+  color: grey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.todo-add__descr {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 13px;
+  padding: 0;
+  line-height: 18px;
+  overflow: hidden;
+  resize: none;
+  height: 48px;
+}
+
+.todo-add__footer,
+.todo-add__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-add__menu {
+  display: flex;
+  align-items: center;
+}
+
+.todo-add__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.project-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: #555;
+
+  height: 28px;
+  padding: 0px 4px;
+  margin-right: 10px;
+
+  font-size: 13px;
+
+  border-radius: 5px;
+  border: 1px solid rgb(204 204 204);
+
+  text-decoration: none;
+}
+
+.project-picker svg {
+  margin-left: 0px;
+}
+
+.project-picker:hover {
+  background-color: #eee;
+}

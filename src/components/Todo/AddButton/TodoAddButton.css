@@ -1,0 +1,29 @@
+
+.button-add {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+.button-add__icon {
+  color: #dd4b39;
+  height: 17px;
+  width: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.button-add:hover .button-add__icon {
+  background: #dd4b39;
+  color: #fff;
+}
+
+.button-add__text {
+  font-size: 14px;
+  color: grey
+}
