@@ -11,16 +11,16 @@ export const fetchProjects = createAsyncThunk(
 
       return data;
     } catch (e) {
-      ThunkAPI.rejectWithValue((e as Error).message);
+      return ThunkAPI.rejectWithValue((e as Error).message);
     }
   },
 );
 
 export const addProject = createAsyncThunk(
   'projects/add',
-  async (_, ThunkAPI) => {
+  async (data: Exclude<Partial<IProject>, 'id'>, ThunkAPI) => {
     try {
-      const { data: project } = await api.get<IProject>('/projects/');
+      const { data: project } = await api.post<IProject>('/projects/', data);
 
       return project;
     } catch (e) {
