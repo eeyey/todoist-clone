@@ -1,0 +1,24 @@
+.icon-button {
+  min-width: 24px;
+  height: 24px;
+
+  margin: 0px 2px;
+  padding: 0;
+
+  border-radius: 5px;
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  color: grey;
+
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background: #eee;
+  color: #000;
+}

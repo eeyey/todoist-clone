@@ -1,0 +1,30 @@
+.projects-panel__title {
+  display: flex;
+  align-items: center;
+  margin-left: 21px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  color: rgba(0, 0, 0, 0.56);
+  font-weight: 600;
+  padding-right: 8px;
+}
+
+.projects-panel__text {
+  font-size: 14px;
+  margin-left: 7px;
+}
+
+.projects-panel__wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.plus-button {
+  opacity: 0;
+}
+
+.projects-panel:hover .plus-button {
+  opacity: 1;
+}

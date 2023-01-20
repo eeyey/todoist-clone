@@ -1,7 +1,11 @@
 import React from 'react';
 
 import { Outlet } from 'react-router-dom';
+
+import classnames from 'classnames';
+
 import { Header } from '../../Header';
+import { Sidebar } from '../../Sidebar';
 
 import './Layout.css';
 
@@ -15,7 +19,8 @@ export const Layout = () => {
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
-      <div className="content">
+      <Sidebar open={showSidebar} />
+      <div className={classnames('content', { content_open: showSidebar })}>
         <Outlet />
       </div>
     </>
