@@ -11,7 +11,6 @@ export interface ITodo {
   title: string;
   descr: string;
   projectId: number;
-  labelsId: number[];
   priority: number;
   term: number | null;
   complete: boolean;
