@@ -38,11 +38,15 @@ export const TodosContainer: React.FC<TodosContainerProps> = (props) => {
     setFormAction(null);
   };
 
+  const onEdit = (todo: ITodo) => {
+    setFormAction({ type: 'edit', todo });
+  };
+
   const todoRender = (todo: ITodo) => {
     return formAction?.type === 'edit' && formAction.todo.id === todo.id ? (
       <TodoForm key="form" type="edit" onEnd={onEnd} data={todo} />
     ) : (
-      <Todo key={todo.id} data={todo} />
+      <Todo key={todo.id} data={todo} onEdit={onEdit.bind(this, todo)} />
     );
   };
 

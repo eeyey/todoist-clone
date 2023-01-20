@@ -2,6 +2,7 @@ import React from 'react';
 import { updateTodo, useAppDispatch } from '../../../core/store';
 import { ITodo } from '../../../core/types';
 import { CheckboxIcon24 } from '../../icons';
+import { ActionsMenu } from '../ActionsMenu';
 import { DateButton } from '../DateButton';
 import { ProjectLink } from '../ProjectLink';
 
@@ -9,12 +10,13 @@ import './Todo.css';
 
 export interface TodoProps {
   data: ITodo;
+  onEdit: () => void;
   showDateButton?: boolean;
   showProject?: boolean;
 }
 
 export const Todo: React.FC<TodoProps> = (props) => {
-  const { data, showDateButton, showProject } = props;
+  const { data, onEdit, showDateButton, showProject } = props;
 
   const dispatch = useAppDispatch();
 
@@ -48,6 +50,7 @@ export const Todo: React.FC<TodoProps> = (props) => {
           {showProject && <ProjectLink projectId={data.projectId} />}
         </div>
       </div>
+      <ActionsMenu onEdit={onEdit} todo={data} />
     </div>
   );
 };
