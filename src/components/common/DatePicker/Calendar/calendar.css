@@ -1,0 +1,181 @@
+.calendar {
+  width: 250px;
+  height: 236px;
+  overflow: hidden;
+}
+
+.calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 10px 4px 16px;
+}
+
+.calendar__current {
+  color: #202020;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.calendar__nav {
+  display: flex;
+  align-items: center;
+}
+
+.calendar__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  background: #fff;
+  border: none;
+  padding: 0px;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calendar__button:last-child {
+  margin-right: 0;
+}
+
+.calendar__button:hover {
+  background: #f3f3f3;
+}
+
+.calendar__circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+.calendar__date_inactive,
+.calendar__button_inactive {
+  cursor: default;
+  position: relative;
+}
+
+.calendar__date_inactive::before,
+.calendar__button_inactive::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0.8;
+}
+
+.calendar__button_inactive:hover {
+  background: #fff;
+}
+
+.calendar__months-wrapper {
+  overflow: hidden;
+}
+
+.calendar__months {
+  transition: 0.2s ease;
+}
+
+.calendar__row {
+  display: flex;
+  padding: 0 10px;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.calendar__row_scrolled {
+  border-bottom: 1px solid #ddd;
+}
+
+.calendar__row:last-child {
+  justify-content: start;
+}
+
+.date-detail {
+  font-size: 10px;
+  width: 100%;
+  height: 24px;
+  color: grey;
+  text-align: center;
+}
+
+.date-detail__info {
+  font-weight: bold;
+}
+
+.date-detail__bar {
+  position: absolute;
+  bottom: 3px;
+  height: 3px;
+  background: rgb(184, 184, 184);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+.calendar__cell {
+  width: calc(230px / 7);
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px 0;
+}
+
+.calendar__cell:hover .calendar__date:not(.calendar__date_selected) {
+  background: #f3f3f3;
+}
+
+.calendar__cell_week {
+  font-size: 10px;
+  color: grey;
+  cursor: default;
+  padding: 0px;
+}
+
+.calendar__date {
+  width: 23px;
+  height: 24px;
+  color: #202020;
+  font-size: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  line-height: 24px;
+}
+
+.calendar__date_selected {
+  background: #d1453b;
+  color: #fff;
+  font-weight: bold;
+}
+
+.calendar__date_selected:hover {
+  background: #d1453b !important;
+  color: #fff !important;
+}
+
+.calendar__date_today {
+  color: #d1453b !important;
+  font-weight: bold;
+}
+
+.calendar__date_inactive {
+  cursor: default;
+}
+
+.calendar__month-title {
+  margin: 0px 16px;
+  padding: 8px 0;
+  color: #202020;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}

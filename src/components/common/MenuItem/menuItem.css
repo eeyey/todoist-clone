@@ -1,0 +1,29 @@
+.menu-item {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #202020;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #f3f3f3;
+}
+
+.menu-item__icon {
+  margin-right: 10px;
+  color: grey;
+}
+
+.menu-item__text {
+  width: 100%;
+}
+
+.menu-item__additional {
+  font-size: 12px;
+  white-space: nowrap;
+  color: rgba(0,0,0,0.56);
+}
+

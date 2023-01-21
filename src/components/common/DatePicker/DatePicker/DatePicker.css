@@ -1,0 +1,32 @@
+.datepicker {
+  box-shadow: 0 1px 8px 0 rgb(0 0 0 / 8%), 0 0 1px 0 rgb(0 0 0 / 30%);
+  border: 1px solid #ddd;
+  width: 100px;
+  overflow: hidden;
+  width: 250px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.datepicker__item-text {
+  font-weight: bold;
+}
+
+.datepicker__date-wrapper {
+  padding: 6px 10px 6px 13px;
+  border-bottom: 1px solid #ddd;
+}
+
+.datepicker__date-input {
+  width: 100%;
+  font-size: 13px;
+  line-height: 20px;
+  height: 20px;
+  border: none;
+  outline: 0;
+}
+
+.datepicker__calendar {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
