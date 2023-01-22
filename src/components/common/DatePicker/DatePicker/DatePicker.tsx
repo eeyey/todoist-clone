@@ -4,17 +4,13 @@ import { Calendar } from '../Calendar';
 import { FastMenu } from '../FastMenu';
 import { DateInput } from '../DateInput';
 
+import { DefaultPopoverProps, Popover } from '../../Popover';
+
 import './DatePicker.css';
-import { Popover } from '../../Popover';
 
 type DateType = Date | null;
 
-type GetProps<T> = T extends React.FC<infer Props> ? Props : T;
-type PopoverProps = GetProps<typeof Popover>;
-type DatePopoverProps = Pick<PopoverProps, 'anchorEl' | 'onClose' | 'open'> &
-  Partial<PopoverProps>;
-
-interface DatePickerProps extends DatePopoverProps {
+interface DatePickerProps extends DefaultPopoverProps {
   onChange: (date: DateType) => void;
   value?: Date | null;
   children?: any;

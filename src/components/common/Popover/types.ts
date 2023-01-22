@@ -14,3 +14,9 @@ export interface PopoverProps {
   children: React.ReactNode;
   onClose: () => void;
 }
+
+export type DefaultPopoverProps = Pick<
+  PopoverProps,
+  'anchorEl' | 'onClose' | 'open'
+> &
+  Partial<PopoverProps>;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { List, MenuItem, Popover } from '../../common';
+import { DefaultPopoverProps, List, MenuItem, Popover } from '../../common';
 import * as Icons from '../../icons';
 
 import { ITodo } from '../../../core/types';
@@ -15,12 +15,7 @@ import {
 import './TaskMenu.css';
 import { FastMenu } from './FastMenu';
 
-type GetProps<T> = T extends React.FC<infer Props> ? Props : T;
-type PopoverProps = GetProps<typeof Popover>;
-type MenuPopoverProps = Pick<PopoverProps, 'anchorEl' | 'onClose' | 'open'> &
-  Partial<PopoverProps>;
-
-interface TaskMenuProps extends MenuPopoverProps {
+interface TaskMenuProps extends DefaultPopoverProps {
   todo: ITodo;
   onEdit: () => void;
 }
