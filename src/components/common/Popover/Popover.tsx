@@ -43,22 +43,22 @@ export const Popover: React.FC<PopoverProps> = (props) => {
     setContentPos({ left: `${x}px`, top: `${y}px` });
   }, [anchorEl]);
 
-  return (
+  return open ? (
     <Portal>
-      {open && (
-        <div onMouseDown={onClose} className="popper">
-          <div
-            ref={popperContent}
-            style={contentPos}
-            onMouseDown={(e: React.MouseEvent) => {
-              e.stopPropagation();
-            }}
-            className="popper__content"
-          >
-            {children}
-          </div>
+      <div onMouseDown={onClose} className="popper">
+        <div
+          ref={popperContent}
+          style={contentPos}
+          onMouseDown={(e: React.MouseEvent) => {
+            e.stopPropagation();
+          }}
+          className="popper__content"
+        >
+          {children}
         </div>
-      )}
+      </div>
     </Portal>
+  ) : (
+    <></>
   );
 };
