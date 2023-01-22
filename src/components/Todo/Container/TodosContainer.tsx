@@ -9,6 +9,7 @@ import { TodoForm } from '../Form';
 interface TodosContainerProps {
   todos: ITodo[];
   canAdd?: boolean;
+  showDate?: boolean;
   projectId?: number;
 }
 
@@ -22,7 +23,7 @@ interface EditType {
 type FormAction = AddType | EditType | null;
 
 export const TodosContainer: React.FC<TodosContainerProps> = (props) => {
-  const { todos, projectId, canAdd = true } = props;
+  const { todos, projectId, canAdd = true, showDate = true } = props;
 
   const [formAction, setFormAction] = useState<FormAction>();
 
@@ -46,7 +47,12 @@ export const TodosContainer: React.FC<TodosContainerProps> = (props) => {
     return formAction?.type === 'edit' && formAction.todo.id === todo.id ? (
       <TodoForm key="form" type="edit" onEnd={onEnd} data={todo} />
     ) : (
-      <Todo key={todo.id} data={todo} onEdit={onEdit.bind(this, todo)} />
+      <Todo
+        key={todo.id}
+        data={todo}
+        onEdit={onEdit.bind(this, todo)}
+        showDate={showDate}
+      />
     );
   };
 

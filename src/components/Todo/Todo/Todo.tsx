@@ -11,12 +11,12 @@ import './Todo.css';
 export interface TodoProps {
   data: ITodo;
   onEdit: () => void;
-  showDateButton?: boolean;
+  showDate?: boolean;
   showProject?: boolean;
 }
 
 export const Todo: React.FC<TodoProps> = (props) => {
-  const { data, onEdit, showDateButton, showProject } = props;
+  const { data, onEdit, showDate, showProject } = props;
 
   const dispatch = useAppDispatch();
 
@@ -39,7 +39,7 @@ export const Todo: React.FC<TodoProps> = (props) => {
         <div className="todo__title">{data.title} </div>
         <div className="todo__descr">{data.descr}</div>
         <div className="todo__footer">
-          {showDateButton && data.term ? (
+          {showDate && data.term ? (
             <DateButton
               onChange={dateChangeHadler}
               date={data.term ? new Date(data.term) : null}

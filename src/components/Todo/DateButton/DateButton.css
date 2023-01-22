@@ -4,6 +4,9 @@
   align-items: center;
   cursor: pointer;
   color: grey;
+  background: #fff;
+  padding: 0px;
+  border: none;
 }
 
 .date-button_big:hover {

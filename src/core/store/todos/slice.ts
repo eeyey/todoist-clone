@@ -32,7 +32,7 @@ const todosSlice = createSlice({
       if (todo) {
         Object.assign(todo, data);
 
-        api.put(`/todos/${todo.id}/`, data); // need catch error?
+        api.put(`/todos/${todo.id}/`, todo); // need catch error?
       }
     },
     removeTodo: (state, action: PayloadAction<{ id: number }>) => {

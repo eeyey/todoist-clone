@@ -1,6 +1,9 @@
 import React from 'react';
 
+import classnames from 'classnames';
+
 import { CalendarIcon12, CalendarIcon16 } from '../../icons';
+import { DatePicker } from '../../common';
 
 import { getTextAndStyle } from './utils';
 
@@ -12,16 +15,33 @@ interface DateButtonProps {
   isBig?: boolean;
 }
 
-export const DateButton: React.FC<DateButtonProps> = ({ date, isBig }) => {
-  let [className, buttonText] = getTextAndStyle(date);
+export const DateButton: React.FC<DateButtonProps> = (props) => {
+  const { date, onChange, isBig } = props;
 
-  if (isBig) className += ' date-button_big';
+  const [className, buttonText] = getTextAndStyle(date);
+
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
+    null,
+  );
+
+  const bthHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(e.currentTarget);
+  };
+
+  const onClose = setAnchorEl.bind(this, null);
 
   return (
     <>
-      <div onClick={() => {}} className={className}>
+      <button
+        onClick={bthHandler}
+        className={classnames(className, { 'date-button_big': isBig })}
+      >
         {isBig ? <CalendarIcon16 /> : <CalendarIcon12 />} {buttonText}
-      </div>
+      </button>
+      <DatePicker
+        open={Boolean(anchorEl)}
+        {...{ anchorEl, onChange, onClose }}
+      />
     </>
   );
 };

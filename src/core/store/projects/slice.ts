@@ -32,7 +32,7 @@ const projectsSlice = createSlice({
       if (project) {
         Object.assign(project, data);
 
-        api.put(`/projects/${project.id}`, data);
+        api.put(`/projects/${project.id}`, project);
       }
     },
     removeProject: (state, action: PayloadAction<{ id: number }>) => {
