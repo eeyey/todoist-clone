@@ -14,6 +14,7 @@ import {
 
 import './TaskMenu.css';
 import { FastMenu } from './FastMenu';
+import { ProjectSelect } from '../ProjectsSelect';
 
 interface TaskMenuProps extends DefaultPopoverProps {
   todo: ITodo;
@@ -22,6 +23,10 @@ interface TaskMenuProps extends DefaultPopoverProps {
 
 export const TaskMenu: React.FC<TaskMenuProps> = (props) => {
   const { todo, onClose, onEdit, anchorEl, open, position } = props;
+
+  const [selectAnchor, setSelectAnchor] = React.useState<HTMLLIElement | null>(
+    null,
+  );
 
   const dispatch = useAppDispatch();
 
@@ -53,7 +58,9 @@ export const TaskMenu: React.FC<TaskMenuProps> = (props) => {
     {
       icon: <Icons.RelocateIcon24 />,
       text: 'Перенести в проект',
-      onClick: () => {},
+      onClick: (e: React.MouseEvent<HTMLLIElement>) => {
+        setSelectAnchor(e.currentTarget);
+      },
     },
     {
       icon: <Icons.DuplicateIcon24 />,
@@ -105,6 +112,18 @@ export const TaskMenu: React.FC<TaskMenuProps> = (props) => {
           renderItem={(item, i) => <MenuItem key={i} {...item} />}
         />
       </div>
+      <ProjectSelect
+        open={Boolean(selectAnchor)}
+        anchorEl={selectAnchor}
+        onChange={(projectId) => {
+          updateAction({ projectId });
+        }}
+        onClose={() => {
+          setSelectAnchor(null);
+          onClose();
+        }}
+        value={todo.projectId}
+      />
     </Popover>
   );
 };

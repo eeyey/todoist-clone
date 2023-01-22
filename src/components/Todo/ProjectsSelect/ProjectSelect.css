@@ -1,0 +1,12 @@
+.project-select {
+  background: #fff;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+  padding: 0px;
+  list-style: none;
+}
