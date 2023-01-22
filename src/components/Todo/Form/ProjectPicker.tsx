@@ -23,7 +23,7 @@ export const ProjectPicker: React.FC<ProjectPickerProps> = (props) => {
     title = 'Входящие';
   } else {
     icon = <ProjectIcon12 color={project.color} />;
-    title = `{project.title[0].toUpperCase()} ${project.title.slice(1)}`;
+    title = `${project.title[0].toUpperCase()}${project.title.slice(1)}`;
   }
 
   return (

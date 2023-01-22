@@ -23,7 +23,7 @@ interface EditType {
 type FormAction = AddType | EditType | null;
 
 export const TodosContainer: React.FC<TodosContainerProps> = (props) => {
-  const { todos, projectId, canAdd = true, showDate = true } = props;
+  const { todos, projectId = 0, canAdd = true, showDate = true } = props;
 
   const [formAction, setFormAction] = useState<FormAction>();
 
@@ -59,7 +59,9 @@ export const TodosContainer: React.FC<TodosContainerProps> = (props) => {
   return (
     <>
       {todos.map(todoRender)}
-      {formAction?.type === 'add' && <TodoForm type="add" onEnd={onEnd} />}
+      {formAction?.type === 'add' && (
+        <TodoForm type="add" onEnd={onEnd} data={{ projectId }} />
+      )}
       {canAdd && !formAction && <TodoAddButton onClick={btnHandler} />}
     </>
   );

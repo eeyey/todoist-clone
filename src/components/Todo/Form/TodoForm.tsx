@@ -16,7 +16,7 @@ import { addTodo, updateTodo, useAppDispatch } from '../../../core/store';
 interface TodoFormProps {
   type: 'add' | 'edit';
   onEnd: () => void;
-  data?: ITodo;
+  data?: Partial<ITodo>;
 }
 
 export const TodoForm: React.FC<TodoFormProps> = (props) => {
@@ -35,12 +35,12 @@ export const TodoForm: React.FC<TodoFormProps> = (props) => {
   const submit = () => {
     if (!title.trim().length) return;
 
-    const todo = { title, descr, term, priority, projectId };
+    const todo = { title: title.trim(), descr, term, priority, projectId };
 
     if (type === 'add') {
       dispatch(addTodo(todo));
     } else {
-      if (data) dispatch(updateTodo({ id: data?.id, data: todo }));
+      if (data?.id) dispatch(updateTodo({ id: data?.id, data: todo }));
     }
 
     onEnd();

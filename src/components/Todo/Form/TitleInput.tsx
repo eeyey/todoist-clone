@@ -24,7 +24,7 @@ export const TitleInput: React.FC<TitleInputProps> = (props) => {
         className="todo-add__title"
         html={value}
         onChange={(e) => {
-          onChange(e.target.value);
+          onChange(e.target.value.replace(/&nbsp;|\u202F|\u00A0/g, ' ')); // replace non-breaking space
         }}
         onKeyDown={onKeydown}
       />
