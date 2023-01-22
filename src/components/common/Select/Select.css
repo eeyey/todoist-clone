@@ -1,0 +1,41 @@
+.select {
+  overflow-y: scroll;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.select-item {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #202020;
+  height: 30px;
+  white-space: nowrap;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.select-item:hover {
+  background: #f3f3f3;
+}
+
+.select-item__icon {
+  margin-right: 10px;
+  min-width: 16px;
+  color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.select-item__text {
+  width: 100%;
+}
+
+.select-item__checkmark {
+  display: flex;
+  align-items: center;
+}
