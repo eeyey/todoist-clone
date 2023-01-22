@@ -1,0 +1,84 @@
+.menu {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 8px 0 rgb(0 0 0 / 8%);
+  margin-left: 10px;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list__item {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #202020;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.menu-list__item:hover {
+  background: #f3f3f3;
+}
+
+.menu-list__icon {
+  margin-right: 10px;
+  color: grey;
+}
+
+.menu-list__text {
+  width: 100%;
+}
+
+.menu-list__additional {
+  font-size: 12px;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.menu__separator {
+  height: 1px;
+  background: rgb(221, 221, 221);
+  margin: 4px;
+}
+
+.todo-menu__fast {
+  padding: 4px 10px;
+}
+
+.todo-menu__group-title {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.88);
+  margin: 7px 0;
+}
+
+.todo-menu__group-title:first-child {
+  margin: 0px 0px 7px 0;
+}
+
+.todo-menu__fast-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.todo-menu__fast-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.todo-menu__fast-button:hover {
+  background: #eee;
+}
+
+.todo-menu__fast-button:not(:first-child) {
+  margin-left: 12px;
+}
