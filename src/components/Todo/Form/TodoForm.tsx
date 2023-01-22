@@ -74,7 +74,7 @@ export const TodoForm: React.FC<TodoFormProps> = (props) => {
           <div className="todo-add__menu">
             <PriorityPicker
               value={priority}
-              onChange={(value, _) => {
+              onChange={(value) => {
                 setPriority(value);
               }}
             />
