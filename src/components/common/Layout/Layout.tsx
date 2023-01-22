@@ -21,7 +21,9 @@ export const Layout = () => {
       <Header toggleSidebar={toggleSidebar} />
       <Sidebar open={showSidebar} />
       <div className={classnames('content', { content_open: showSidebar })}>
-        <Outlet />
+        <div className="container">
+          <Outlet />
+        </div>
       </div>
     </>
   );
