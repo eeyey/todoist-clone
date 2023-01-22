@@ -1,6 +1,6 @@
 import React from 'react';
 import { selectProjects, useAppSelector } from '../../../core/store';
-import { InboxIcon16, ProjectIcon12 } from '../../icons';
+import { ProjectIcon } from '../../icons';
 
 interface ProjectPickerProps {
   value: number;
@@ -16,20 +16,10 @@ export const ProjectPicker: React.FC<ProjectPickerProps> = (props) => {
 
   if (!project) throw Error('Cant get project');
 
-  let icon, title;
-
-  if (project.id === 0) {
-    icon = <InboxIcon16 />;
-    title = 'Входящие';
-  } else {
-    icon = <ProjectIcon12 color={project.color} />;
-    title = `${project.title[0].toUpperCase()}${project.title.slice(1)}`;
-  }
-
   return (
     <div className="project-picker">
-      {icon}
-      {title}
+      <ProjectIcon projectId={project.id} color={project.color} />
+      {project.title}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { InboxIcon16, ProjectIcon12 } from '../../icons';
+import { ProjectIcon } from '../../icons';
 
 import { selectProjects, useAppSelector } from '../../../core/store';
 
@@ -17,32 +17,14 @@ export const ProjectLink: React.FC<ProjectLinkProps> = (props) => {
 
   const { projects } = useAppSelector(selectProjects);
 
-  const project = React.useMemo(() => {
-    const project = projects.find((project) => project.id === projectId);
+  const project = projects.find((project) => project.id === projectId);
 
-    if (projectId === 0 || !project) {
-      return {
-        title: 'Входящие',
-        icon: <InboxIcon16 />,
-      };
-    }
-
-    return {
-      title: project.title,
-      icon: <ProjectIcon12 color={project.color} />,
-    };
-  }, [projects, projectId]);
+  if (!project) throw Error('Cant get project');
 
   return (
     <Link to={`/project/${projectId}`} className={'project-link'}>
       {project.title}
-      {project.icon}
+      <ProjectIcon projectId={project.id} color={project.color} />
     </Link>
   );
-
-  // return isLink ? (
-
-  // ) : (
-  //
-  // );
 };
