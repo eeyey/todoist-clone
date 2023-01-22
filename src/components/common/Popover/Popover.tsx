@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDisableScroll } from '../../../hooks';
 
 import { Portal } from '../Portal';
 
@@ -14,6 +15,8 @@ export const Popover: React.FC<PopoverProps> = (props) => {
     top: '-9999px',
   });
 
+  useDisableScroll(document.documentElement, open, true);
+
   const popperContent = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
@@ -21,18 +24,20 @@ export const Popover: React.FC<PopoverProps> = (props) => {
 
     if (!popover || !anchorEl) return;
 
+    const { width, height } = popover.getBoundingClientRect();
+
     let x = -9999;
     let y = -9999;
 
     const positions = Array.isArray(position) ? position : [position];
 
     for (let i = 0; i < positions.length; i++) {
-      const { anchorOrigin, transformOrigin } = positions[0];
+      const { anchorOrigin, transformOrigin } = positions[i];
 
       [x, y] = getAnchorOrigin(anchorEl, anchorOrigin);
       [x, y] = getTransformOrigin(popover, transformOrigin, [x, y]);
 
-      if (pointInScreen(x, y)) break;
+      if (pointInScreen(x, y) && pointInScreen(x + width, y + height)) break;
     }
 
     setContentPos({ left: `${x}px`, top: `${y}px` });
