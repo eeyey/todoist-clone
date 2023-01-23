@@ -55,3 +55,4 @@ export * from './TopIcon24';
 export * from './LogoIcon';
 export * from './LoadingIcon';
 export * from './ProjectIcon';
+export * from './ArhiveIcon24';

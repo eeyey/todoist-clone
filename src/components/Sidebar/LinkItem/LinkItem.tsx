@@ -13,12 +13,11 @@ interface LinkItemProps {
   to: string;
   icon: JSX.Element;
   score?: number;
-  isOverdue?: boolean;
-  dotsClick?: (e?: React.MouseEvent<HTMLDivElement>) => void;
+  dotsClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export const LinkItem: React.FC<LinkItemProps> = (props) => {
-  const { text, to, icon, score, isOverdue, dotsClick } = props;
+  const { text, to, icon, score, dotsClick } = props;
 
   const match = useMatch(to);
 

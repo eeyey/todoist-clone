@@ -2,8 +2,9 @@ import React from 'react';
 
 import { List } from '../../common';
 import { IconButton } from '../../UI';
-import { LinkItem } from '../LinkItem';
-import { PlusIcon13, ProjectIcon24 } from '../../icons';
+import { PlusIcon13 } from '../../icons';
+import { ProjectForm } from '../../Project';
+import { ProjectItem } from '../ProjectItem';
 
 import {
   selectProjects,
@@ -12,7 +13,6 @@ import {
 } from '../../../core/store';
 
 import './ProjectsPanel.css';
-import { ProjectForm } from '../../Project';
 
 export const ProjectsPanel = () => {
   const { projects } = useAppSelector(selectProjects);
@@ -21,20 +21,7 @@ export const ProjectsPanel = () => {
   const [openForm, setOpenForm] = React.useState(false);
 
   const projectItems = React.useMemo(
-    () =>
-      projects
-        .filter((project) => project.id !== 0 && !project.archive)
-        .map((project) => ({
-          id: project.id,
-          text: project.title,
-          to: `/project/${project.id}`,
-          score: todos.filter(
-            (todo) => todo.projectId === project.id && !todo.complete,
-          ).length,
-          isOverdue: false,
-          icon: <ProjectIcon24 color={project.color} />,
-          dotsClick: () => {},
-        })),
+    () => projects.filter((project) => project.id !== 0 && !project.archive),
     [projects, todos],
   );
 
@@ -54,8 +41,8 @@ export const ProjectsPanel = () => {
 
         <List
           style={{ paddingLeft: '16px' }}
-          renderItem={(projectItem) => (
-            <LinkItem key={projectItem.id} {...projectItem} />
+          renderItem={(project) => (
+            <ProjectItem key={project.id} project={project} />
           )}
           items={projectItems}
         />
