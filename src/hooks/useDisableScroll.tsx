@@ -11,8 +11,6 @@ export const useDisableScroll = <T,>(
     if (!pageScroll) return;
 
     element.scrollTo(0, +pageScroll);
-
-    e.preventDefault();
   }, []);
 
   const disableScroll = React.useCallback(() => {
