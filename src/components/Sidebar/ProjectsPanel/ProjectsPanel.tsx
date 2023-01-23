@@ -12,10 +12,13 @@ import {
 } from '../../../core/store';
 
 import './ProjectsPanel.css';
+import { ProjectForm } from '../../Project';
 
 export const ProjectsPanel = () => {
   const { projects } = useAppSelector(selectProjects);
   const { todos } = useAppSelector(selectTodos);
+
+  const [openForm, setOpenForm] = React.useState(false);
 
   const projectItems = React.useMemo(
     () =>
@@ -36,13 +39,17 @@ export const ProjectsPanel = () => {
   );
 
   return (
-    <>
+    <React.Fragment>
       <div className="projects-panel">
         <h2 className="projects-panel__title">
           <div className="projects-panel__wrapper">
             <span className="projects-panel__text">Проекты</span>
           </div>
-          <IconButton className="plus-button" icon={<PlusIcon13 />} />
+          <IconButton
+            className="plus-button"
+            icon={<PlusIcon13 />}
+            onClick={setOpenForm.bind(this, true)}
+          />
         </h2>
 
         <List
@@ -53,6 +60,12 @@ export const ProjectsPanel = () => {
           items={projectItems}
         />
       </div>
-    </>
+
+      <ProjectForm
+        type="add"
+        onClose={setOpenForm.bind(this, false)}
+        open={openForm}
+      />
+    </React.Fragment>
   );
 };
