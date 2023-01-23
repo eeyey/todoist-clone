@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { DefaultPopoverProps, List, MenuItem, Popover } from '../../common';
+import { ProjectSelect } from '../ProjectsSelect';
+import { FastMenu } from './FastMenu';
 import * as Icons from '../../icons';
 
 import { ITodo } from '../../../core/types';
@@ -12,9 +14,7 @@ import {
   useAppDispatch,
 } from '../../../core/store';
 
-import './TaskMenu.css';
-import { FastMenu } from './FastMenu';
-import { ProjectSelect } from '../ProjectsSelect';
+import './TodoMenu.css';
 
 interface TaskMenuProps extends DefaultPopoverProps {
   todo: ITodo;
