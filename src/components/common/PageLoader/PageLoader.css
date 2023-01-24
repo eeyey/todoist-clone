@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   background: #fff;
+  z-index: 100;
 }
 .page-loader__content {
   display: flex;
