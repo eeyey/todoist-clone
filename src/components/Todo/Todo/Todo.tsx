@@ -1,10 +1,13 @@
 import React from 'react';
-import { updateTodo, useAppDispatch } from '../../../core/store';
-import { ITodo } from '../../../core/types';
+
 import { CheckboxIcon24 } from '../../icons';
 import { ActionsMenu } from '../ActionsMenu';
 import { DateButton } from '../DateButton';
 import { ProjectLink } from '../ProjectLink';
+
+import { updateTodo, useAppDispatch } from '../../../core/store';
+
+import { ITodo } from '../../../core/types';
 
 import './Todo.css';
 
@@ -45,7 +48,7 @@ export const Todo: React.FC<TodoProps> = (props) => {
               date={data.term ? new Date(data.term) : null}
             />
           ) : (
-            <></>
+            <div></div>
           )}
           {showProject && <ProjectLink projectId={data.projectId} />}
         </div>
