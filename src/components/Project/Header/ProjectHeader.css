@@ -2,6 +2,10 @@
   padding-top: 36px;
   justify-content: space-between;
   margin-bottom: 15px;
+  position: sticky;
+  top: 43px;
+  background: #fff;
+  z-index: 5;
 }
 
 .project-header__title {
@@ -27,7 +31,6 @@
   font-size: 12px;
   margin-right: 15px;
 }
-
 
 .project-header__button:last-child {
   margin-right: 0;
