@@ -4,6 +4,10 @@
   justify-content: space-between;
   padding-top: 36px;
   margin-bottom: 24px;
+  position: sticky;
+  top: 43px;
+  z-index: 5;
+  background: #fff;
 }
 
 .today-header__title {
