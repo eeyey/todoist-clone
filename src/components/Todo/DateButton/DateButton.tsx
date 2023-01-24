@@ -18,8 +18,6 @@ interface DateButtonProps {
 export const DateButton: React.FC<DateButtonProps> = (props) => {
   const { date, onChange, isBig } = props;
 
-  const [className, buttonText] = getTextAndStyle(date);
-
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null,
   );
@@ -30,11 +28,15 @@ export const DateButton: React.FC<DateButtonProps> = (props) => {
 
   const onClose = setAnchorEl.bind(this, null);
 
+  const [styleName, buttonText] = getTextAndStyle(date);
+
   return (
     <>
       <button
         onClick={bthHandler}
-        className={classnames(className, { 'date-button_big': isBig })}
+        className={classnames('date-button', styleName, {
+          'date-button_big': isBig,
+        })}
       >
         {isBig ? <CalendarIcon16 /> : <CalendarIcon12 />} {buttonText}
       </button>
