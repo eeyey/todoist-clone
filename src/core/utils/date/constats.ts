@@ -8,6 +8,8 @@ TODAY.setSeconds(0);
 TODAY.setMilliseconds(0);
 
 export const TOMMOROW = new Date(+TODAY + 86400000);
+export const YESTERDAY = new Date(+TODAY - 86400000);
+
 export const HOLIDAYS = new Date(
   +TODAY + 86400000 * (TODAY.getDay() > 0 ? 6 - TODAY.getDay() : 6),
 );

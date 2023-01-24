@@ -1,0 +1,20 @@
+.today-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 36px;
+  margin-bottom: 24px;
+}
+
+.today-header__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.today-header__date {
+  color: grey;
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 400;
+}
