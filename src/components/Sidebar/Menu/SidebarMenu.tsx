@@ -23,7 +23,7 @@ export const SidebarMenu = () => {
       {
         to: '/today/',
         text: 'Сегодня',
-        score: todos.filter((todo) => isToday(todo.createdAt)).length,
+        score: todos.filter((todo) => isToday(todo.term)).length,
         isOverdue: true,
         icon: <TodayIcon24 />,
       },
