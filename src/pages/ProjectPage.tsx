@@ -19,7 +19,7 @@ export const ProjectPage = () => {
   return (
     <>
       <ProjectHeader projectId={+id} />
-      <TodosContainer todos={projectTodos} projectId={+id} />
+      <TodosContainer todos={projectTodos} projectId={+id} showDate />
       <Outlet />
     </>
   );

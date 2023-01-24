@@ -1,0 +1,18 @@
+.todo-container-header {
+  position: sticky;
+  top: 43px;
+  font-weight: bold;
+  padding: 6px 0px;
+  margin: 0;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+  z-index: 2;
+}
+
+.todo-container-name {
+  color: #000;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
