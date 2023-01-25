@@ -9,6 +9,10 @@ export const nextDay = (date: Date | number) => {
   return new Date(+date + 24 * 3600 * 1000);
 };
 
+export const prevDay = (date: Date | number) => {
+  return new Date(+date - 24 * 3600 * 1000);
+};
+
 export const getDMY = (data: Date | number): DMY => {
   const date = data instanceof Date ? data : new Date(data);
 

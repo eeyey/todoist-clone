@@ -60,7 +60,7 @@ export const TodosContainer: React.FC<TodosContainerProps> = (props) => {
   const canAdd = date === undefined || (date && +date >= +TODAY);
 
   return (
-    <section className="todo-container">
+    <section data-timestamp={date ? +date : null} className="todo-container">
       {date && <TodoContainerHeader date={date} />}
       {todos.map(todoRender)}
       {formAction?.type === 'add' && (

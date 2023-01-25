@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { TodosContainer } from '../components/Todo';
+import { UpcomingHeader } from '../components/Upcoming';
 
 import { selectTodos, useAppSelector } from '../core/store';
 
@@ -43,6 +44,7 @@ export const UpcomingPage = () => {
 
   return (
     <React.Fragment>
+      <UpcomingHeader />
       {!!overdueTodos.length && (
         <TodosContainer
           todos={overdueTodos}

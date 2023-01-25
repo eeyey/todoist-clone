@@ -1,0 +1,71 @@
+.upcoming-header {
+  padding-top: 36px;
+  margin-bottom: 28px;
+  position: sticky;
+  top: 43px;
+  z-index: 5;
+  background: #fff;
+}
+
+.upcoming-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.upcomming-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.upcoming-button {
+  height: 26px;
+  border: 1px solid #ccc;
+  line-height: 26px;
+  overflow: hidden;
+  border-radius: 5px;
+  color: #555;
+  padding: 0px 2px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.upcoming-button:hover {
+  background: #eee;
+}
+
+.upcoming-button_inactive {
+  pointer-events: none;
+  position: relative;
+  cursor: default;
+}
+
+.upcoming-button_inactive:hover {
+  background: #fff;
+}
+
+.upcoming-button_inactive:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.upcoming-button_right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-right: 8px;
+  border-left: none;
+}
+
+.upcoming-button_left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.upcoming-button__today {
+  padding: 0px 8px;
+}
