@@ -2,6 +2,7 @@
   width: 250px;
   height: 236px;
   overflow: hidden;
+  background: #fff;
 }
 
 .calendar__header {

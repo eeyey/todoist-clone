@@ -48,6 +48,7 @@ export const ActionsMenu: React.FC<ActionsMenuProps> = (props) => {
         open={Boolean(dateAnchor)}
         anchorEl={dateAnchor}
         onClose={setDateAnchor.bind(this, null)}
+        value={todo.term ? new Date(todo.term) : null}
         onChange={(date) => {
           dispatch(
             updateTodo({ id: todo.id, data: { term: date ? +date : null } }),

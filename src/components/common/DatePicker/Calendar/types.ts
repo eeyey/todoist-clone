@@ -1,7 +1,9 @@
-export interface CalendarProps {
-  onSelect: (date: Date) => void;
-  selectedDate?: Date | null;
-}
+import React from 'react';
+
+export type CalendarProps = {
+  onChange: (date: Date) => void;
+  value?: Date | null;
+} & Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'>;
 
 export interface IMonthBorder {
   start: number;

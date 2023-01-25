@@ -27,18 +27,18 @@ function getInactiveDays(d: Date): DateInfo[] {
 }
 
 function getMonthDaysFrom(start: Date): DateInfo[][] {
-  const weeks: DateInfo[][] = [[]];
+  const weeks: DateInfo[][] = [];
   const month = start.getMonth();
 
   let date = start;
 
   while (date.getMonth() === month) {
+    if (!weeks?.at(-1) || date.getDay() === 1) weeks.push([]);
+
     weeks?.at(-1)?.push({
       date,
       active: true,
     });
-
-    if (date.getDay() === 0) weeks.push([]);
 
     date = new Date(+date + 3600 * 1000 * 24);
   }
@@ -60,6 +60,15 @@ export function getMonthsFrom(from: Date, count: number = 0): DateInfo[][][] {
   months[0][0] = [...getInactiveDays(from), ...months[0][0]];
 
   return months;
+}
+
+export function getMonthCount(from: Date, to: Date) {
+  const fromYear = from.getFullYear();
+  const fromMonth = from.getMonth();
+  const toYear = to.getFullYear();
+  const toMonth = to.getMonth();
+
+  return (toYear % fromYear) * 12 + toMonth - fromMonth;
 }
 
 export function getDetailString(date: Date) {

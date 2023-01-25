@@ -42,6 +42,7 @@ export const DateButton: React.FC<DateButtonProps> = (props) => {
       </button>
       <DatePicker
         open={Boolean(anchorEl)}
+        value={date}
         {...{ anchorEl, onChange, onClose }}
       />
     </>

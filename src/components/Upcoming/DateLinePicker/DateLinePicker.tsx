@@ -55,7 +55,11 @@ export const DateLinePicker: React.FC<DateLinePickerProps> = (props) => {
           transformOrigin: ['center', 'top'],
         }}
       >
-        <Calendar onSelect={changeDate} selectedDate={date} />
+        <Calendar
+          className="calendar upcoming-calendar"
+          onChange={changeDate}
+          value={date}
+        />
       </Popover>
     </React.Fragment>
   );

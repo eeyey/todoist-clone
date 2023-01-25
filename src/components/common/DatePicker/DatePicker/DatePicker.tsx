@@ -46,8 +46,8 @@ export const DatePicker: React.FC<DatePickerProps> = (props) => {
     <Popover {...{ onClose, open, anchorEl }} position={popoverPosition}>
       <div className="menu datepicker">
         <DateInput date={date} setDate={setDate} />
-        <FastMenu selectDate={selectDate} />
-        <Calendar onSelect={selectDate} selectedDate={value} />
+        <FastMenu onChange={selectDate} />
+        <Calendar onChange={selectDate} value={value} />
       </div>
     </Popover>
   );
