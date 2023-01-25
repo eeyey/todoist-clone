@@ -17,11 +17,11 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ projectId }) => {
     else return filtered[0];
   }, [projectId, projects]);
 
-  if (!project) return <h1>Error</h1>;
+  if (!project) throw Error('Проект не найден :(');
 
   return (
     <header className="project-header">
-      <h1 className="project-header__title">{project.title}</h1>
+      <h1 className="project-header__title">{project?.title ?? ''}</h1>
     </header>
   );
 };

@@ -23,12 +23,7 @@ function App() {
     dispatch(fetchTodos());
   }, []);
 
-  return (
-    <>
-      {isLoading && <PageLoader />}
-      <AppRouter />
-    </>
-  );
+  return <>{isLoading ? <PageLoader /> : <AppRouter />}</>;
 }
 
 export default App;
