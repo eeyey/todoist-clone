@@ -4,8 +4,6 @@ import classnames from 'classnames';
 
 import { LeftArrowIcon24, RightArrowIcon24 } from '../../../icons';
 
-import { MONTH_HEADER_HEIGHT } from './config';
-
 import { MONTH_NAMES, TODAY } from '../../../../core/utils/date';
 
 import { IMonthBorder } from './types';

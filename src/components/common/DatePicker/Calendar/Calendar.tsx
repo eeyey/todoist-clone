@@ -26,13 +26,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
   const calendarRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
-    console.log('Change scroll: ', scroll);
-  }, [scroll]);
-
-  React.useEffect(() => {
     const validValue = value && +value > +TODAY;
-
-    console.log(value);
 
     const count = validValue ? getMonthCount(TODAY, value) : 5;
     const months = getMonthsFrom(TODAY, count);
