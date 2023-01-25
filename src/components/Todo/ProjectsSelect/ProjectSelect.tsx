@@ -11,11 +11,13 @@ export const ProjectSelect: React.FC<ProjectSelectProps> = (props) => {
   const { projects } = useAppSelector(selectProjects);
 
   const selectItems = React.useMemo(() => {
-    return projects.map((project) => ({
-      icon: <ProjectIcon projectId={project.id} color={project.color} />,
-      text: project.title,
-      value: project.id,
-    }));
+    return projects
+      .filter((project) => !project.archive)
+      .map((project) => ({
+        icon: <ProjectIcon projectId={project.id} color={project.color} />,
+        text: project.title,
+        value: project.id,
+      }));
   }, [projects]);
 
   return <Select className="project-select" items={selectItems} {...props} />;
